@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2020 a las 20:08:31
+-- Tiempo de generación: 22-10-2020 a las 20:36:29
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -32,21 +32,16 @@ CREATE TABLE `costos` (
   `concepto` varchar(45) NOT NULL,
   `opciones` varchar(45) NOT NULL,
   `cantidad` int(15) NOT NULL,
-  `costo` int(11) NOT NULL
+  `costo` int(11) NOT NULL,
+  `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `costos`
 --
 
-INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`) VALUES
-(1, 'Azucar', 'KG', 2, 2),
-(3, 'Leche', 'Litro', 3, 2),
-(4, 'Huevo', 'Pieza', 4, 10),
-(6, 'Masa', 'Litro', 2, 2),
-(7, 'Harina', 'KG', 2, 2),
-(8, 'Masa', 'KG', 2, 2),
-(9, 'Agua', 'Litro', 3, 3);
+INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`, `total`) VALUES
+(14, 'Leche', 'Litro', 4, 4, 16);
 
 --
 -- Índices para tablas volcadas
@@ -66,7 +61,7 @@ ALTER TABLE `costos`
 -- AUTO_INCREMENT de la tabla `costos`
 --
 ALTER TABLE `costos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
