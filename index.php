@@ -81,7 +81,7 @@
                                 <td><?php echo $fila['opciones'];?></td>
                                 <td><?php echo $fila['cantidad'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
-                                <td class="total_p"></td>
+                                <td class="total_p"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
                                 </tr>
@@ -96,6 +96,6 @@
             </div>
         </div>
     </div>
-    
+  <script src="javascript.js"></script>
 </body>
 </html>

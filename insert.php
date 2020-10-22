@@ -7,14 +7,16 @@
         $opciones = $_POST['opciones'];
         $cantidad = $_POST['cantidad'];
         $costo = $_POST['costo'];
-        
+        $total = $_POST['total'];
+        $total = $cantidad*$costo;
         if(!empty($concepto) && !empty($opciones) && !empty($cantidad) && !empty($costo)){
-            $consulta_insert = $conn->prepare('INSERT INTO costos(concepto,opciones,cantidad,costo) VALUES(:concepto,:opciones,:cantidad,:costo)');
+            $consulta_insert = $conn->prepare('INSERT INTO costos(concepto,opciones,cantidad,costo,total) VALUES(:concepto,:opciones,:cantidad,:costo,:total)');
             $consulta_insert->execute(array(
                 ':concepto' =>$concepto,
                 ':opciones' =>$opciones,
                 ':cantidad' =>$cantidad,
-                ':costo' =>$costo
+                ':costo' =>$costo,
+                ':total' =>$total
             ));
             header('Location: index.php');
         }else{
