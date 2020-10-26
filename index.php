@@ -67,6 +67,7 @@
                                 <th>Unidad</th>
                                 <th>Cantidad</th>
                                 <th>Costo</th>
+                                <th>Fecha</th>
                                 <th>Total</th>
                                 <th colspan="2">Accion</th>
                             </tr>
@@ -81,6 +82,7 @@
                                 <td><?php echo $fila['opciones'];?></td>
                                 <td><?php echo $fila['cantidad'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
+                                <td><?php echo $fila['fecha'];?></td>
                                 <td class="total_p"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>

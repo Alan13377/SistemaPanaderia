@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2020 a las 20:36:29
+-- Tiempo de generación: 26-10-2020 a las 23:45:31
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -33,6 +33,7 @@ CREATE TABLE `costos` (
   `opciones` varchar(45) NOT NULL,
   `cantidad` int(15) NOT NULL,
   `costo` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,8 +41,9 @@ CREATE TABLE `costos` (
 -- Volcado de datos para la tabla `costos`
 --
 
-INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`, `total`) VALUES
-(14, 'Leche', 'Litro', 4, 4, 16);
+INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`, `fecha`, `total`) VALUES
+(14, 'Leche', 'Litro', 4, 4, '2020-10-26 20:21:21', 16),
+(15, 'Leche', 'KG', 2, 5, '2020-10-26 20:31:10', 10);
 
 --
 -- Índices para tablas volcadas
@@ -61,7 +63,7 @@ ALTER TABLE `costos`
 -- AUTO_INCREMENT de la tabla `costos`
 --
 ALTER TABLE `costos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
