@@ -26,13 +26,13 @@
     <title>Inicio</title>
 </head>
 <body>
-<div class="contenedor-barra">
+ <div class="contenedor-barra">
         <h1>Formulario</h1>
     </div>
     <div class="bg-amarillo contenedor sombra">
 
         <form id="materia" action="" method="post">
-            <Legend>Ingrese los Datos <span>Todos los campos son obligatorio</span> </Legend>
+            <Legend>Lista de Gastos<span>Ingrese un valor para buscar</span> </Legend>
             <div class="campos">
                     <div class="campo">
                         <label for="buscar"></label>
@@ -48,7 +48,7 @@
         
             <div class="navs">
                             <nav class="navegacion">
-                             <a href="insert.php">Nuevo</a>
+                             <a href="insert.php">Nuevo <i class="fas fa-plus-square"></i></a>
                         </nav>
                         
                         </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
-            <h2>Costos</h2>
+            <h2>Pasivos</h2>
         
             <div class="contenedor-tabla">
                 <table id="listado-costos" class="listado-costos">
@@ -90,6 +90,10 @@
                             <?php endforeach ?>
                             
                         </tbody>
+                        <div class="navs">
+                            <nav class="navegacion">
+                             <a href="reporte.php" target="_blank">Generar Reporte</a>
+                        </nav>
                 </table>
                 <div class="totales">
                               <label for="T">Total:</label>
@@ -97,7 +101,55 @@
                             </div>
             </div>
         </div>
+        
     </div>
+    <div class="bg-azul contenedor sombra datos">
+        <div class="contenedor-datos">
+            <h2>Activos</h2>
+        
+            <div class="contenedor-tabla">
+                <table id="listado-costos" class="listado-costos">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Concepto</th>
+                                <th>Unidad</th>
+                                <th>Cantidad</th>
+                                <th>Costo</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th colspan="2">Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            
+                            <?php foreach($resultado as $fila):?>
+                                <tr>
+                                <td><?php echo $fila['id'];?></td>
+                                <td><?php echo $fila['concepto'];?></td>
+                                <td><?php echo $fila['opciones'];?></td>
+                                <td><?php echo $fila['cantidad'];?></td>
+                                <td><?php echo $fila['costo'];?></td>
+                                <td><?php echo $fila['fecha'];?></td>
+                                <td class="total_p"><?php echo $fila['total'];?></td>
+                                <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
+                                <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
+                                </tr>
+                            <?php endforeach ?>
+                            
+                        </tbody>
+                        <div class="navs">
+                            <nav class="navegacion">
+                             <a href="reporte.php" target="_blank">Generar Reporte</a>
+                        </nav>
+                </table>
+                <div class="totales">
+                              <label for="T">Total:</label>
+                               <input type="text" id="Totales">
+                            </div>
+            </div>
+        </div>
   <script src="javascript.js"></script>
 </body>
 </html>
