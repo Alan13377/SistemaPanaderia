@@ -18,6 +18,16 @@
         ));
         $resultado=$select_buscar->fetchAll();
     }
+
+    //Buscar A
+    if(isset($_POST['btn_buscarA'])){
+        $buscar_textA=$_POST['buscarA'];
+        $select_buscarA=$conn->prepare('SELECT * FROM activo WHERE concepto LIKE :campo OR id Like :campo;');
+        $select_buscarA->execute(array(
+            ':campo' => "%".$buscar_textA."%"
+        ));
+        $resultadoA=$select_buscarA->fetchAll();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +97,7 @@
                                 <td><?php echo $fila['cantidad'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
                                 <td><?php echo $fila['fecha'];?></td>
-                                <td class="total_a"><?php echo $fila['total'];?></td>
+                                <td class="total_"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
                                 </tr>
@@ -107,10 +117,20 @@
         </div>
         
     </div>
+
+    
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
             <h2>Activos</h2>
-        
+            <form action="" method="POST">
+            <label for="buscar"></label>
+                <input class="buscador"type="text" placeholder="Buscar" id="concepto"
+                name="buscarA"  required="required">
+                <div class="campo enviar">
+                <input type="submit" value="Buscar" name="btn_buscarA">
+                 </div> 
+            </form>
+
             <div class="contenedor-tabla">
                 <table id="listado-costos" class="listado-costos">
                         <thead>
