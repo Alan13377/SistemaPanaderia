@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2020 a las 23:45:31
+-- Tiempo de generación: 02-11-2020 a las 23:07:21
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -24,6 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `activo`
+--
+
+CREATE TABLE `activo` (
+  `id` int(11) NOT NULL,
+  `concepto` varchar(45) NOT NULL,
+  `categoria` varchar(45) NOT NULL,
+  `costo` float NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `total` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `activo`
+--
+
+INSERT INTO `activo` (`id`, `concepto`, `categoria`, `costo`, `fecha`, `total`) VALUES
+(2, 'Banco', 'Activo Circulante', 3000, '2020-11-02 21:27:04', 3000),
+(3, 'Clientes', 'Activo Circulante', 400, '2020-11-02 21:28:43', 400);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `costos`
 --
 
@@ -31,10 +54,10 @@ CREATE TABLE `costos` (
   `id` int(11) NOT NULL,
   `concepto` varchar(45) NOT NULL,
   `opciones` varchar(45) NOT NULL,
-  `cantidad` int(15) NOT NULL,
-  `costo` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `total` int(11) NOT NULL
+  `cantidad` float NOT NULL,
+  `costo` float NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,12 +65,17 @@ CREATE TABLE `costos` (
 --
 
 INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`, `fecha`, `total`) VALUES
-(14, 'Leche', 'Litro', 4, 4, '2020-10-26 20:21:21', 16),
-(15, 'Leche', 'KG', 2, 5, '2020-10-26 20:31:10', 10);
+(2, 'Agua', 'Litro', 2, 10, '2020-11-02 20:29:33', 20);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `activo`
+--
+ALTER TABLE `activo`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `costos`
@@ -60,10 +88,16 @@ ALTER TABLE `costos`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `activo`
+--
+ALTER TABLE `activo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `costos`
 --
 ALTER TABLE `costos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
