@@ -5,6 +5,10 @@
     $sentencia_select->execute();
     $resultado=$sentencia_select->fetchAll();
 
+    $sentencia_select=$conn->prepare('SELECT * FROM activo ORDER BY id DESC');
+    $sentencia_select->execute();
+    $resultadoA=$sentencia_select->fetchAll();
+
     //buscar
     if(isset($_POST['btn_buscar'])){
         $buscar_text=$_POST['buscar'];
@@ -113,8 +117,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Concepto</th>
-                                <th>Unidad</th>
-                                <th>Cantidad</th>
+                                <th>Categoria</th>
                                 <th>Costo</th>
                                 <th>Fecha</th>
                                 <th>Total</th>
@@ -124,12 +127,11 @@
                         <tbody>
                             
                             
-                            <?php foreach($resultado as $fila):?>
+                            <?php foreach($resultadoA as $fila):?>
                                 <tr>
                                 <td><?php echo $fila['id'];?></td>
                                 <td><?php echo $fila['concepto'];?></td>
-                                <td><?php echo $fila['opciones'];?></td>
-                                <td><?php echo $fila['cantidad'];?></td>
+                                <td><?php echo $fila['categoria'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
                                 <td><?php echo $fila['fecha'];?></td>
                                 <td class="total_p"><?php echo $fila['total'];?></td>
