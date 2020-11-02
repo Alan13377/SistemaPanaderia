@@ -87,7 +87,7 @@
                                 <td><?php echo $fila['cantidad'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
                                 <td><?php echo $fila['fecha'];?></td>
-                                <td class="total_p"><?php echo $fila['total'];?></td>
+                                <td class="total_a"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
                                 </tr>
@@ -101,7 +101,7 @@
                 </table>
                 <div class="totales">
                               <label for="T">Total:</label>
-                               <input type="text" id="Totales">
+                               <input type="text" id="TotalesA">
                             </div>
             </div>
         </div>
