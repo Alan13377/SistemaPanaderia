@@ -44,6 +44,10 @@
         }
 
     }
+
+    $sentencia_select=$conn->prepare('SELECT * FROM materiales');
+    $sentencia_select->execute();
+    $resultado=$sentencia_select->fetchAll();
 ?>
 
 
@@ -74,10 +78,13 @@
             <Legend>Ingrese los Pasivos <span>Todos los campos son obligatorio</span> </Legend>
             <div class="campos">
                     <div class="campo">
-                        <label for="concepto">Concepto:</label>
-                        <input type="text" placeholder="Ingrese la materia"
-                            name="concepto"  required="required"
-                        >
+                    <label for="">Elija el concepto</label>
+                    <select name="concepto" required="required">
+                            <option value="" disbled selected>Seleccione</option>
+                            <?php foreach ($resultado as $concepto):?>
+                                <option value="<?php echo $concepto ['nombre']?>"><?php echo $concepto ['nombre']?></option>
+                            <?php endforeach?>
+                        </select>
                     </div>
                     <div class="campo">
                         <label for="opciones">Unidad:</label>

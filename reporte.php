@@ -4,6 +4,8 @@ include_once 'conexion.php';
 $sentencia_select=$conn->prepare('SELECT * FROM costos ORDER BY id DESC');
 $sentencia_select->execute();
 $resultado=$sentencia_select->fetchAll();
+
+
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -60,4 +62,6 @@ endforeach;
 
 
 $pdf->Output();
+
+
 ?>

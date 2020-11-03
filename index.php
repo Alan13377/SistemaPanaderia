@@ -43,35 +43,26 @@
  <div class="contenedor-barra">
         <h1>Formulario</h1>
     </div>
-    <div class="bg-amarillo contenedor sombra">
-
-        <form id="materia" action="" method="post">
-            <Legend>Lista de Gastos<span>Ingrese un valor para buscar</span> </Legend>
-            <div class="campos">
-                    <div class="campo">
-                        <label for="buscar"></label>
-                        <input type="text" placeholder="Buscar" id="concepto"
-                            name="buscar"  required="required"
-                        >
-                        <div class="campo enviar">
-                        <input type="submit" value="Buscar" name="btn_buscar">
-                        </div>
-                    </div>
-                    
-            </div>
-        
+   
+    <div class="bg-azul contenedor sombra datos">
+        <div class="contenedor-datos">
+            <h2>Pasivos</h2>
             <div class="navs">
                             <nav class="navegacion">
                              <a href="insert.php">Nuevo <i class="fas fa-plus-square"></i></a>
                         </nav>
                         
                         </div>
-        </form>
-    </div>
-    <div class="bg-azul contenedor sombra datos">
-        <div class="contenedor-datos">
-            <h2>Pasivos</h2>
-        
+                <form action="" method="POST">
+                <label for="buscar"></label>
+                        <input class="buscador"type="text" placeholder="Buscar" id="concepto"
+                            name="buscar"  required="required"
+                        >
+                        <div class="campo enviar">
+                        <input type="submit" value="Buscar" name="btn_buscar">
+                        </div>
+                        
+                </form>
             <div class="contenedor-tabla">
                 <table id="listado-costos" class="listado-costos">
                         <thead>
@@ -97,7 +88,7 @@
                                 <td><?php echo $fila['cantidad'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
                                 <td><?php echo $fila['fecha'];?></td>
-                                <td class="total_"><?php echo $fila['total'];?></td>
+                                <td class="total_p"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
                                 </tr>
@@ -111,7 +102,7 @@
                 </table>
                 <div class="totales">
                               <label for="T">Total:</label>
-                               <input type="text" id="TotalesA">
+                               <input type="text" id="Totales">
                             </div>
             </div>
         </div>
@@ -122,6 +113,12 @@
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
             <h2>Activos</h2>
+            <div class="navs">
+                            <nav class="navegacion">
+                             <a href="insert.php">Nuevo <i class="fas fa-plus-square"></i></a>
+                        </nav>
+                        
+                        </div>
             <form action="" method="POST">
             <label for="buscar"></label>
                 <input class="buscador"type="text" placeholder="Buscar" id="concepto"
@@ -154,22 +151,17 @@
                                 <td><?php echo $fila['categoria'];?></td>
                                 <td><?php echo $fila['costo'];?></td>
                                 <td><?php echo $fila['fecha'];?></td>
-                                <td class="total_p"><?php echo $fila['total'];?></td>
+                                <td class="total_a"><?php echo $fila['total'];?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id'];?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id'];?>"><i class="fas fa-trash-alt"></i></a></td>
                                 </tr>
+                                
                             <?php endforeach ?>
                             
                         </tbody>
-                        <div class="navs">
-                            <nav class="navegacion">
-                             <a href="reporte.php" target="_blank">Generar Reporte</a>
-                        </nav>
+                       
                 </table>
-                <div class="totales">
-                              <label for="T">Total:</label>
-                               <input type="text" id="Totales">
-                            </div>
+               
             </div>
         </div>
   <script src="javascript.js"></script>
