@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2020 a las 23:07:21
+-- Tiempo de generación: 04-11-2020 a las 21:48:20
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -42,7 +42,8 @@ CREATE TABLE `activo` (
 
 INSERT INTO `activo` (`id`, `concepto`, `categoria`, `costo`, `fecha`, `total`) VALUES
 (2, 'Banco', 'Activo Circulante', 3000, '2020-11-02 21:27:04', 3000),
-(3, 'Clientes', 'Activo Circulante', 400, '2020-11-02 21:28:43', 400);
+(3, 'Clientes', 'Activo Circulante', 400, '2020-11-02 21:28:43', 400),
+(4, 'Banco', 'Activo Circulante', 500, '2020-11-03 13:34:12', 500);
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,32 @@ CREATE TABLE `costos` (
 --
 
 INSERT INTO `costos` (`id`, `concepto`, `opciones`, `cantidad`, `costo`, `fecha`, `total`) VALUES
-(2, 'Agua', 'Litro', 2, 10, '2020-11-02 20:29:33', 20);
+(2, 'Agua', 'Litro', 2, 10, '2020-11-02 20:29:33', 20),
+(3, 'Harina', 'KG', 7, 40, '2020-11-03 13:46:49', 240),
+(4, 'Azucar', 'KG', 30, 300, '2020-11-03 15:21:11', 9000),
+(5, 'Azucar', 'KG', 30, 100, '2020-11-03 16:17:00', 3000);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materiales`
+--
+
+CREATE TABLE `materiales` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `materiales`
+--
+
+INSERT INTO `materiales` (`id`, `nombre`) VALUES
+(1, 'Azucar'),
+(2, 'Agua'),
+(3, 'Leche'),
+(4, 'Huevos'),
+(5, 'Harina');
 
 --
 -- Índices para tablas volcadas
@@ -84,6 +110,12 @@ ALTER TABLE `costos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `materiales`
+--
+ALTER TABLE `materiales`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -91,13 +123,19 @@ ALTER TABLE `costos`
 -- AUTO_INCREMENT de la tabla `activo`
 --
 ALTER TABLE `activo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `costos`
 --
 ALTER TABLE `costos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `materiales`
+--
+ALTER TABLE `materiales`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
