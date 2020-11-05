@@ -75,9 +75,13 @@
     <title>Editar</title>
 </head>
 <body>
-<div class="contenedor-barra">
+<div class="contenedor-barra navegacion">
+            <nav>
+                <a href="index.php">Volver</a>
+            </nav>
         <h1>Formulario</h1>
     </div>
+    
     <div class="bg-amarillo contenedor sombra">
 
         <form id="materia" action="" method="post">
