@@ -14,7 +14,7 @@
                 ':concepto' =>$concepto,
                 ':opciones' =>$categoria,
                 ':cantidad' =>$costo,
-                ':total' =>$total
+                ':total' =>$$total
             ));
             header('Location: index.php');
         }else{

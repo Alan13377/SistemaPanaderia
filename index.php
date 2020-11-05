@@ -96,13 +96,15 @@
                             
                         </tbody>
                         <div class="navs">
-                            <nav class="navegacion">
-                             <a href="reporte.php" target="_blank">Generar Reporte</a>
-                        </nav>
                 </table>
                 <div class="totales">
+                    <br>
                               <label for="T">Total:</label>
-                               <input type="text" id="Totales">
+                                <input type="text" id="Totales">
+                                <nav class="navegacion">
+                                    <br>
+                             <a href="reporte.php" target="_blank">Generar Reporte</a>
+                        </nav>
                             </div>
             </div>
         </div>
@@ -159,6 +161,7 @@
                             <?php endforeach ?>
                             
                         </tbody>
+                        
                        
                 </table>
                

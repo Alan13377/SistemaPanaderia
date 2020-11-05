@@ -13,7 +13,7 @@ function Header()
 {
     // Logo
     
-    $this->SetFont('Arial','B',15);
+    $this->SetFont('Arial','B',20);
     // Movernos a la derecha
     $this->Cell(-45);
     // Título

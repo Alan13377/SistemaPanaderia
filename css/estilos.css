@@ -12,6 +12,7 @@ body{
 .navs{
     display: flex;
     justify-content: flex-end;
+    
 }
 .contenedor{
     max-width: 1100px;
@@ -23,7 +24,7 @@ body{
     align-items: center;
 }
 .bg-amarillo{
-    background-color: #ffc107;
+    background-color: #fac528;
 }
 
 .bg-azul{
@@ -114,7 +115,7 @@ legend span{
 }
 
 .campo input[type="submit"]:hover{
-    background-color: rgb(97, 5, 42);
+    background-color: rgb(172, 4, 116);
 }
 
 .datos{
@@ -152,7 +153,7 @@ legend span{
 }
 
 .listado-costos thead{
-    background-color:green;
+    background-color:rgb(172, 4, 116);
     text-transform: uppercase;
 }
 
@@ -163,7 +164,7 @@ legend span{
 .listado-costos tbody td{
     padding: .5rem;
     text-align: center;
-    border: 2px cornflowerblue solid;
+    border: 2px rgb(99, 207, 221) solid;
 }
 
 .listado-costos button{
@@ -177,15 +178,15 @@ legend span{
 }
 
 .btn-editar{
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 
 .btn-borrar{
     color:red;
 }
 .volver{
-   background-color: yellow;
-    border-radius: 5px;
+   background-color: rgb(243, 247, 28);
+    border-radius: 10px;
     text-align: center;
     color: black;
     font-weight: 700;
@@ -211,9 +212,9 @@ legend span{
 }
 
 .navegacion a{
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 23px;
     margin-right: 20px;
 }
 
