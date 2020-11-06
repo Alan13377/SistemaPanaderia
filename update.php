@@ -17,14 +17,16 @@
         $opciones = $_POST['opciones'];
         $cantidad = $_POST['cantidad'];
         $costo = $_POST['costo'];
-
+        $total = $_POST['total'];
+        $total = $cantidad*$costo;
         if(!empty($concepto) && !empty($opciones) && !empty($cantidad) && !empty($costo)){
-            $consulta_update = $conn->prepare('UPDATE costos SET concepto=:concepto,opciones=:opciones,cantidad=:cantidad,costo=:costo WHERE id=:id;');
+            $consulta_update = $conn->prepare('UPDATE costos SET concepto=:concepto,opciones=:opciones,cantidad=:cantidad,costo=:costo,total=:total WHERE id=:id;');
             $consulta_update->execute(array(
                 ':concepto' =>$concepto,
                 ':opciones' =>$opciones,
                 ':cantidad' =>$cantidad,
                 ':costo' =>$costo,
+                ':total' =>$total,
                 ':id' =>$id
             ));
             header('Location: index.php');
