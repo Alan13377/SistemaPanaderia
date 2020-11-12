@@ -26,7 +26,7 @@
                 ':opciones' =>$opciones,
                 ':cantidad' =>$cantidad,
                 ':costo' =>$costo,
-                ':total' =>$total,
+            ':total' => $total,
                 ':id' =>$id
             ));
             header('Location: index.php');
