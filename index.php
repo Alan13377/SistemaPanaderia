@@ -28,6 +28,8 @@ if (isset($_POST['btn_buscarA'])) {
     ));
     $resultadoA = $select_buscarA->fetchAll();
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +40,9 @@ if (isset($_POST['btn_buscarA'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/86b7a86e90.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="plotly-latest.min.js"></script>
     <title>Inicio</title>
 </head>
 
@@ -49,7 +54,9 @@ if (isset($_POST['btn_buscarA'])) {
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
             <h2>Pasivos</h2>
+
             <div class="navs">
+
                 <nav class="navegacion">
                     <a href="insert.php">Nuevo <i class="fas fa-plus-square"></i></a>
                 </nav>
@@ -91,8 +98,14 @@ if (isset($_POST['btn_buscarA'])) {
                                 <td class="total_p"><?php echo $fila['total']; ?></td>
                                 <td><a href="update.php?id=<?php echo $fila['id']; ?>"><i class="far fa-edit"></i></a></td>
                                 <td><a href="borrar.php?id=<?php echo $fila['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+
+
+
                             </tr>
+
                         <?php endforeach ?>
+
+
 
                     </tbody>
                     <div class="navs">
@@ -110,6 +123,7 @@ if (isset($_POST['btn_buscarA'])) {
         </div>
 
     </div>
+
 
 
     <div class="bg-azul contenedor sombra datos">
@@ -170,6 +184,41 @@ if (isset($_POST['btn_buscarA'])) {
             </div>
         </div>
         <script src="javascript.js"></script>
+    </div>
+    <div class="bg-azul contenedor sombra datos">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+
+                        </div>
+                        <div class="panel panel-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h1>Grafica Pasivos</h1>
+                                    <div id="cargaLineal"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h1>Grafica Activos</h1>
+                                    <div id="cargaLineal2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#cargaLineal').load('Graficas.php');
+        $('#cargaLineal2').load('GraficaA.php');
+    });
+</script>
