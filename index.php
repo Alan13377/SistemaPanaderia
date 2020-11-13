@@ -38,11 +38,13 @@ if (isset($_POST['btn_buscarA'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/86b7a86e90.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="https://kit.fontawesome.com/86b7a86e90.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="bootstrap.css">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Inicio</title>
 </head>
 
@@ -64,7 +66,7 @@ if (isset($_POST['btn_buscarA'])) {
             </div>
             <form action="" method="POST">
                 <label for="buscar"></label>
-                <input class="buscador" type="text" placeholder="Buscar" id="concepto" name="buscar" required="required">
+                <input class="buscador" type="text" placeholder="Ingrese un id o Concepto" id="concepto" name="buscar" required="required">
                 <div class="campo enviar">
                     <input type="submit" value="Buscar" name="btn_buscar">
                 </div>
@@ -137,7 +139,7 @@ if (isset($_POST['btn_buscarA'])) {
             </div>
             <form action="" method="POST">
                 <label for="buscar"></label>
-                <input class="buscador" type="text" placeholder="Buscar" id="concepto" name="buscarA" required="required">
+                <input class="buscador" type="text" placeholder="Ingrese un id o Concepto" id="concepto" name="buscarA" required="required">
                 <div class="campo enviar">
                     <input type="submit" value="Buscar" name="btn_buscarA">
                 </div>
