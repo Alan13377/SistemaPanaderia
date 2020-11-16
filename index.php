@@ -32,6 +32,7 @@ if (isset($_POST['btn_buscarA'])) {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +57,11 @@ if (isset($_POST['btn_buscarA'])) {
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
             <h2>Pasivos</h2>
-
+            <form action="consulta_fechas.php" method="POST">
+                <input type="date" name="f1" require>
+                <input type="date" name="f2" require>
+                <input type="submit">
+            </form>
             <div class="navs">
 
                 <nav class="navegacion">
@@ -112,6 +117,7 @@ if (isset($_POST['btn_buscarA'])) {
                     </tbody>
                     <div class="navs">
                 </table>
+
                 <div class="totales">
                     <br>
                     <label for="T">Total:</label>
@@ -131,6 +137,11 @@ if (isset($_POST['btn_buscarA'])) {
     <div class="bg-azul contenedor sombra datos">
         <div class="contenedor-datos">
             <h2>Activos</h2>
+            <form action="consultasA.php" method="POST">
+                <input type="date" name="f1" require>
+                <input type="date" name="f2" require>
+                <input type="submit">
+            </form>
             <div class="navs">
                 <nav class="navegacion">
                     <a href="insert.php">Nuevo <i class="fas fa-plus-square"></i></a>
@@ -183,44 +194,19 @@ if (isset($_POST['btn_buscarA'])) {
                     <br>
                     <a href="reporteA.php" target="_blank">Generar Reporte</a>
                 </nav>
+                <nav class="navegacion">
+                    <br>
+                    <a href="Balance.php" target="_blank">Ver Balance</a>
+                </nav>
             </div>
         </div>
         <script src="javascript.js"></script>
-    </div>
-    <div class="bg-azul contenedor sombra datos">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-primary">
-                        <div class="panel panel-heading">
-
-                        </div>
-                        <div class="panel panel-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h1>Grafica Pasivos</h1>
-                                    <div id="cargaLineal"></div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h1>Grafica Activos</h1>
-                                    <div id="cargaLineal2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
+
 
 
 </body>
 
+
 </html>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#cargaLineal').load('Graficas.php');
-        $('#cargaLineal2').load('GraficaA.php');
-    });
-</script>
