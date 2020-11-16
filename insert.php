@@ -127,7 +127,7 @@ $resultado = $sentencia_select->fetchAll();
                     <select name="categoria" required="required">
                         <option value="" disabled selected>Seleccione</option>
                         <option value="Activo Circulante">Activo Circulante</option>
-                        <option value="Activo No Circulante">Activo No Circulante</option>
+                        <option value="Activo Fijo">Activo Fijo</option>
                     </select>
                 </div>
                 <div class="campo">

@@ -228,3 +228,6 @@ legend span {
 th {
   text-align: center;
 }
+article {
+  column-count: 2;
+}
