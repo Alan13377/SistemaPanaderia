@@ -51,7 +51,7 @@ $datosY = json_encode($valoresY);
         },
         xaxis: {
             tickangle: -45,
-            title: 'fechas'
+            title: 'Conceptos'
         },
         yaxis: {
             title: '$$ Montos'
